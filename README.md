@@ -156,5 +156,6 @@ class User(Base):
     )
 ```
 
-    [CRUD's base.py is worth looking at too](./app/crud/base.py)
+[CRUD's base.py is worth looking at too](app/crud/base.py)
+    
 </details>
