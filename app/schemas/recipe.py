@@ -36,3 +36,7 @@ class Recipe(RecipeInDBBase):
 # Properties stored in DB
 class RecipeInDB(RecipeInDBBase):
     pass
+
+
+class RecipeSearchResults(BaseModel):
+    results: Sequence[Recipe]

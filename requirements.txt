@@ -3,5 +3,6 @@ SQLAlchemy==1.4.25
 uvicorn==0.15.0
 alembic==1.7.3
 tenacity==8.0.1
-
+Jinja2
+pydantic[email]
 
