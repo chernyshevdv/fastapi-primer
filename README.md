@@ -40,7 +40,7 @@ if __name__ == "__main__":
 <details>
     <summary>Click to expand code examples!</summary>
     
-#### **`./app/main.py`**
+**`./app/main.py`**
 ```python
 ...
 from sqlalchemy.orm import Session
@@ -78,13 +78,13 @@ def fetch_recipe(*, recipe_id: int, db: Session = Depends(deps.get_db)) -> Any:
     return result
 ```
 
-#### **`./app/crud/__init__.py`**
+**`./app/crud/__init__.py`**
 ```python
 from .crud_recipe import recipe
 from .crud_user import user
 ```
 
-### **`./app/crud/crud_user.py`**
+**`./app/crud/crud_user.py`**
 ```python
 from typing import Any, Dict, Optional, Union
 from sqlalchemy.orm import Session
@@ -112,7 +112,7 @@ class CRUDUser(CRUDBase[User, UserCreate, UserUpdate]):
 user = CRUDUser(User)
 ```
 
-#### **`./app/schemas/user.py`**
+**`./app/schemas/user.py`**
 ```python
 from typing import Optional
 from pydantic import BaseModel, EmailStr
@@ -135,7 +135,7 @@ class UserUpdate(UserBase):
     ...
 ```
 
-#### **`./app/models/user.py`:**
+**`./app/models/user.py`:**
 ```python
 from sqlalchemy import Column, Integer, String, Boolean
 from sqlalchemy.orm import relationship
@@ -155,4 +155,6 @@ class User(Base):
         uselist=True
     )
 ```
+
+    [CRUD's base.py is worth looking at too](./app/crud/base.py)
 </details>
