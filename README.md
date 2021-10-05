@@ -161,3 +161,45 @@ class User(Base):
 </details>
 
 Some more advanced explanations are in [Ultimate FastAPI tutorial](https://christophergs.com/tutorials/ultimate-fastapi-tutorial-pt-7-sqlalchemy-database-setup/)
+
+## Migrations with alembic
+
+First, install alembic:
+
+`pip install alembic`
+
+Or it might be installed already, if you did `pip install -r requirements.txt`
+Then generate `alembic` folder and `alembic.ini` file:
+
+```alembic init alembic```
+
+Edit `alembic.ini` to amend one row:
+
+```
+sqlalchemy.url = sqlite:///example.db
+```
+
+Then edit `alembic/env.py` file to add your metadata:
+
+```python
+# add your model's MetaData object here
+# for 'autogenerate' support
+# from myapp import mymodel
+# target_metadata = mymodel.Base.metadata
+# target_metadata = None
+from app.db.base import Base
+from app.db.session import SQLALCHEMY_DATABASE_URI
+target_metadata = Base.metadata
+```
+
+Generate first revision:
+
+```
+alembic revision --autogenerate -m "Initial DB creation"
+```
+
+And push the revision into `example.db`:
+
+```
+alembic upgrade head
+```
