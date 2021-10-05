@@ -35,3 +35,4 @@ if __name__ == "__main__":
 ```
 
 ### Working with data: pydantic (schema) + SQLAlchemy (model)
+![CRUD diagram](diagrams/crud.png)
