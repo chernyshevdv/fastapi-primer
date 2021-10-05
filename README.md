@@ -159,3 +159,5 @@ class User(Base):
 [CRUD's base.py is worth looking at too](app/crud/base.py)
     
 </details>
+
+Some more advanced explanations are in [Ultimate FastAPI tutorial](https://christophergs.com/tutorials/ultimate-fastapi-tutorial-pt-7-sqlalchemy-database-setup/)
